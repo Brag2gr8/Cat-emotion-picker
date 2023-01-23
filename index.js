@@ -13,6 +13,17 @@ memeModalCloseBtn.addEventListener('click', closeModal)
 
 getImageBtn.addEventListener('click', renderCat)
 
+document.addEventListener("click", (e) => {
+    if(
+        e.target.id != 'get-image-btn' &&
+        e.target.id != "meme-modal" &&
+        e.target.id != "cat-image"
+        ) {
+            
+        closeModal()
+    }
+})
+
 function highlightCheckedOption(e){
     const radios = document.getElementsByClassName('radio')
     for (let radio of radios){
